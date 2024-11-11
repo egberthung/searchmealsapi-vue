@@ -13,11 +13,11 @@
 
 <script setup>
 import { computed,ref, onMounted } from 'vue';
-import store from '../store';
+
 import axiosClient from '../axiosClient';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYNZ'.split("");
-const ingredients = ref([])
+const ingredients = ref([]);
 
 onMounted(async ()=> {
   const response=await axiosClient.get('list.php?i=list')
