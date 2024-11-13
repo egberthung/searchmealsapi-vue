@@ -12,8 +12,7 @@
 </template>
 
 <script setup>
-import { computed,ref, onMounted } from 'vue';
-
+import { ref, onMounted } from 'vue';
 import axiosClient from '../axiosClient';
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYNZ'.split("");

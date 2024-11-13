@@ -1,6 +1,11 @@
 <template>
   <div class="m-8 min-w-[800px]">
-    <h1 class="text-4xl font-semibold mb-6">{{ meal.strMeal }}</h1>
+    <h1 class="text-4xl font-semibold mb-6 flex gap-5 items-center">
+      <router-link class="mb-1" :to="{name:'byName',params:{id: id}} ">
+        <span class="text-2xl hover:text-gray-500"><FontAwesomeIcon :icon="['fas', 'arrow-left']"/></span> 
+      </router-link>
+      {{ meal.strMeal }}
+    </h1>
     <div class="flex justify-center items-center w-full">
       <img :src="meal.strMealThumb" :alt="meal.strMeal" class="object-cover rounded h-[600px] w-full" >
     </div>
@@ -61,10 +66,13 @@
   import { onMounted, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import axiosClient from '../axiosClient';
-import YoutubeButton from '../components/YoutubeButton.vue';
+  import YoutubeButton from '../components/YoutubeButton.vue';
+  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
   const route= useRoute();
   const meal= ref({});
+  const id=route.params.id;
+  
   onMounted(()=>{
     axiosClient.get(`lookup.php?i=${route.params.id}`)
     .then(({data})=>{
