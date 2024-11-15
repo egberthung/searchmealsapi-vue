@@ -9,3 +9,17 @@ export function searchMeals({ commit },keyword){
       console.error('Error fetching meals:',error);
     });
 }
+
+export function mealsbyletter({ commit },letter){
+  axiosClient.get(`search.php?f=${letter}`)
+    .then(({data})=>{
+      commit('setLetterMeals', data.meals);
+    })
+    .catch(error=>{
+      console.error(`Error fetching meals:`,error);
+    })
+}
+
+export function mealsbyingredients({commit},ingredient){
+  axiosClient.get(``)
+}
