@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-col p-8">
-
+  <div class="m-5 flex flex-col justify-center items-center h-80">
+    <h1 class=" m-10 text-5xl font-bold text-gray-600">Welcome to this website</h1>
+    <p class="text-2xl font-bold text-gray-600">Go start on Searching meals in the navbar !!!</p>
   </div>
 </template>
 

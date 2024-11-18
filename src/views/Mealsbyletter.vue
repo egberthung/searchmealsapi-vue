@@ -8,7 +8,7 @@
     <div v-if="meals.length > 0" class="grid grid-cols-4 max-[1000px]:grid-cols-2 max-[1100px]:grid-cols-3 gap-5 m-3 ">
       <Mealitem v-for="meal in meals" :key="meal.idMeal" :meal="meal" />
     </div> 
-    <div v-else class="m-5">
+    <div v-else class="m-5 flex justify-center items-center h-80">
       <span>---- Empty list ----</span>
     </div>
   </div>

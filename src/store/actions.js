@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import axiosClient from '../axiosClient';
 
 export function searchMeals({ commit },keyword){
@@ -21,5 +22,11 @@ export function mealsbyletter({ commit },letter){
 }
 
 export function mealsbyingredients({commit},ingredient){
-  axiosClient.get(``)
+  axiosClient.get(`filter.php?i=${ingredient}`)
+    .then(({data})=>{
+      commit('setingridientmeals',data.meals)
+    })
+    .catch(error=>{
+      console.error(`Error fetching meals:`,error);
+    })
 }

@@ -11,7 +11,7 @@
         <router-link :to="{name: 'byLetter'}" class="px-5 h-full hover:text-gray-100 font-medium">
           Meals by Letter
         </router-link>
-        <router-link :to="{name: 'byIngredient'}" class="px-5 h-full hover:text-gray-100 font-medium">
+        <router-link :to="{name: 'Ingredients'}" class="px-5 h-full hover:text-gray-100 font-medium">
           Meals By Ingredients
         </router-link>
       </div>
